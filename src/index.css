@@ -1,0 +1,28 @@
+@import "tailwindcss";
+html {
+  overflow-y: scroll;
+}
+@theme {
+  --font-Ruqaa: "Aref Ruqaa";
+  --font-Messiri: "El Messiri";
+  --animate-slide-in: slide-in 0.25s ease-out;
+
+  @keyframes slide-in {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  --animate-fade-in: fade-in 0.25s ease-in;
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
