@@ -1,4 +1,11 @@
+import { useContext } from "react";
+import { DataContext } from "../../context/DataContext";
+
 const SortMenu = () => {
+  const { setSortBy } = useContext(DataContext);
+  const handleSortBy = (e) => {
+    setSortBy(e.target.value);
+  };
   return (
     <div
       dir="rtl"
@@ -10,6 +17,7 @@ const SortMenu = () => {
         dir="rtl"
         id="sort"
         className="p-2 appearance-none rounded-md text-gray-700  focus:outline-none  bg-[#eee]"
+        onClick={handleSortBy}
       >
         <option className="pl-5" value="age">
           السن
