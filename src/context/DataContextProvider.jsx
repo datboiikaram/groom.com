@@ -39,7 +39,7 @@ const DataContextProvider = ({ children }) => {
       case "height":
         return groomsCopy.sort((a, b) => b.height - a.height);
       case "features":
-        return groomsCopy.sort((a, b) => b.features.length - a.features.length);
+        return groomsCopy.sort((a, b) => b.filters.length - a.filters.length);
     }
   };
 
