@@ -13,7 +13,7 @@ const Related = () => {
       <p className="text-3xl font-bold">خدلك بصة على باقي العرسان</p>
       <div className="grid grid-cols-4 gap-8">
         {relatedGrooms.map((item, index) => (
-          <Card {...item} index={item.id} key={index} />
+          <Card {...item} item={item} index={item.id} key={index} />
         ))}
       </div>
     </div>

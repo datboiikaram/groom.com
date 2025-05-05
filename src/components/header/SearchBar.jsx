@@ -1,9 +1,23 @@
+import { useContext } from "react";
+import { DataContext } from "../../context/DataContext";
+import { useNavigate } from "react-router-dom";
+
 const SearchBar = () => {
+  const { searchQuery, setSearchQuery } = useContext(DataContext);
+  const navigate = useNavigate();
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value);
+
+    navigate("/");
+  };
+
   return (
     <div className="flex items-center h-fit justify-center gap-1 py-1 px-3 bg-gray-100 hover:bg-gray-200 duration-200 w-fit rounded-xl ">
       <input
         id="search"
         type="text"
+        value={searchQuery}
+        onChange={handleSearch}
         className="font-Messiri p-2 rounded-xl outline-0 "
         placeholder="البحث عن ابن الحلال"
         dir="rtl"

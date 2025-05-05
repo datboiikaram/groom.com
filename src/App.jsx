@@ -6,7 +6,7 @@ import DataContextProvider from "./context/DataContextProvider";
 function App() {
   return (
     <div className="w-full  flex flex-col items-center justify-center m-0 p-0">
-      <div className="w-fit items-center justify-center">
+      <div className="w-fit flex flex-col  items-center justify-center gap-10">
         <DataContextProvider>
           <Header />
           <Outlet />

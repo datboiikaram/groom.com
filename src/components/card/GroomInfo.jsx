@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import FeaturesBadge from "./FeaturesBadge";
+import { DataContext } from "../../context/DataContext";
 
 const GroomInfo = ({
   name,
@@ -12,7 +14,16 @@ const GroomInfo = ({
   isMarried,
   romantic,
   height,
+  item,
 }) => {
+  const { setCartList, setFavoritesList } = useContext(DataContext);
+
+  const addToCartHandler = () => {
+    setCartList((prev) => (prev.includes(item) ? prev : [...prev, item]));
+  };
+  const addToFavoritesHandler = () => {
+    setFavoritesList((prev) => (prev.includes(item) ? prev : [...prev, item]));
+  };
   const toArabicNumber = (number) => {
     const arabicNumbers = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
     return number
@@ -106,10 +117,16 @@ const GroomInfo = ({
         </div>
       </div>
       <div className="w-full flex gap-2">
-        <button className="text-violet-800 font-bold bg-violet-200 hover:bg-violet-300 duration-200 py-4 w-full rounded-xl ">
+        <button
+          onClick={addToCartHandler}
+          className="text-violet-800 font-bold bg-violet-200 hover:bg-violet-300 duration-200 py-4 w-full rounded-xl "
+        >
           إضافة إلى سلة العرسان
         </button>
-        <button className="bg-violet-200 hover:bg-violet-300 duration-200 p-4 rounded-xl">
+        <button
+          onClick={addToFavoritesHandler}
+          className="bg-violet-200 hover:bg-violet-300 duration-200 p-4 rounded-xl"
+        >
           {favoritesIcon}
         </button>
       </div>

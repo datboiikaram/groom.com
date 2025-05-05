@@ -1,4 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 const Logo = () => {
+  const navigate = useNavigate();
+  const navigateToHome = () => {
+    navigate("/");
+  };
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -8,6 +14,7 @@ const Logo = () => {
       preserveAspectRatio="xMidYMid meet"
       version="1.0"
       className="w-60"
+      onClick={navigateToHome}
     >
       <defs>
         <g />
