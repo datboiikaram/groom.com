@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import Filter from "./filter";
+import Filter from "./Filter";
 import { DataContext } from "../../context/DataContext";
 
 const ChoosenFilters = () => {
