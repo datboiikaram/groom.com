@@ -7,7 +7,7 @@ import axios from "axios";
 import { DataContext } from "../../context/DataContext";
 
 import { useNavigate } from "react-router-dom";
-import ReactFacebookLogin from "react-facebook-login";
+// import ReactFacebookLogin from "react-facebook-login";
 
 const LoginPage = () => {
   const { setUserInfo, saveToDB } = useContext(DataContext);

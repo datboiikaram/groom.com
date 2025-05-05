@@ -38,10 +38,7 @@ const PreviewImages = ({ images }) => {
           className="flex items-center justify-center z-2 bg-[rgba(0,0,0,0.7)] fixed top-0 right-0 bottom-0 left-0"
         >
           <div className="flex items-center gap-7 ">
-            <button
-              onClick={nextImage}
-              className="bg-white rounded-full p-3 h-fit"
-            >
+            <button onClick={nextImage} className=" bg-white rounded-full p-3 ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
