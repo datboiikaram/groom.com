@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { googleLogout } from "@react-oauth/google";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { DataContext } from "../../context/DataContext";
 
 const avatarIcon = (
   <svg
@@ -315,11 +317,17 @@ const avatarIcon = (
 );
 
 const UserAvatar = ({ avatar, name }) => {
+  const { setUserInfo } = useContext(DataContext);
   const [isOpen, setIsOpen] = useState(false);
   const userClickHandler = (e) => {
     e.preventDefault();
     e.stopPropagation();
     setIsOpen(!isOpen);
+  };
+  const logoutHandler = () => {
+    setUserInfo("");
+    googleLogout();
+    location.reload();
   };
   return (
     <Link to={"/login"} className="w-12 relative">
@@ -332,8 +340,17 @@ const UserAvatar = ({ avatar, name }) => {
             alt=""
           />
           {isOpen && (
-            <div className="border absolute border-[#eee] p-2 rounded-md left-[-50%] font-semibold font-sans ">
+            <div
+              onClick={(e) => e.preventDefault()}
+              className="border cursor-auto flex flex-col items-center justify-center text-center gap-2 absolute min-w-30 bg-white border-[#eee] p-2 rounded-md left-[-100%] font-semibold font-sans "
+            >
               {name}
+              <button
+                onClick={logoutHandler}
+                className="font-Messiri bg-red-200 hover:bg-red-300 cursor-pointer w-30 text-red-800 border rounded-md duration-200 font-bold p-1"
+              >
+                تسجيل الخروج
+              </button>
             </div>
           )}
         </>

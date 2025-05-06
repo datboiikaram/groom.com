@@ -4,7 +4,7 @@ import { MockUpData } from "./MockUpData";
 
 const DataContextProvider = ({ children }) => {
   const [filterList, setFilterList] = useState([]);
-  const [userInfo, setUserInfo] = useState("");
+
   const [sortBy, setSortBy] = useState("age");
 
   const [searchQuery, setSearchQuery] = useState("");
@@ -24,13 +24,19 @@ const DataContextProvider = ({ children }) => {
     const saved = localStorage.getItem(key);
     return saved ? JSON.parse(saved) : "";
   };
+  const [userInfo, setUserInfo] = useState(() => {
+    const saved = localStorage.getItem("user");
+    return saved ? JSON.parse(saved) : "";
+  });
   useEffect(() => {
     saveToDB("cart", cartList);
   }, [cartList]);
   useEffect(() => {
     saveToDB("favorites", favoritesList);
   }, [favoritesList]);
-
+  useEffect(() => {
+    saveToDB("user", userInfo);
+  }, [userInfo]);
   const sortedGrooms = () => {
     const groomsCopy = [...MockUpData];
     switch (sortBy) {

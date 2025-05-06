@@ -30,7 +30,7 @@ const LoginPage = () => {
         setUserInfo(result.data);
         saveToDB("user", result.data);
       } catch {
-        () => console.error("login failed");
+        () => window.alert("login failed");
       }
       navigate("/");
     },
