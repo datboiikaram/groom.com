@@ -14,7 +14,7 @@ const Related = () => {
       className="flex flex-col items-center md:items-start gap-5 mb-10 font-Messiri w-full  "
     >
       <p className="text-lg md:text-3xl font-bold">خدلك بصة على باقي العرسان</p>
-      <div className="grid auto-cols-max grid-flow-col  w-full snap-x snap-mandatory overflow-x-auto  gap-5  md:gap-5 lg:gap-8">
+      <div className="grid auto-cols-max grid-flow-col p-2 w-full snap-x snap-mandatory overflow-x-auto  gap-5  md:gap-5 lg:gap-8">
         {relatedGrooms.map((item, index) => (
           <Card {...item} item={item} index={item.id} key={index} />
         ))}
