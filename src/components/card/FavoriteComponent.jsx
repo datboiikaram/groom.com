@@ -23,7 +23,7 @@ const FavoriteComponent = ({ item, index, image }) => {
     >
       <img
         src={`${image}`}
-        className="w-45 h-50 rounded-xl"
+        className="w-45 object-cover h-50 rounded-xl"
         alt="person image"
       />
       <p className="w-fit text-sm md:text-xl font-bold">{item?.name}</p>

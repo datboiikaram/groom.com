@@ -13,7 +13,7 @@ const CardsLayout = () => {
         <SortSection />
         <div
           dir="rtl"
-          className="grid grid-cols-2 lg:grid-cols-3 w-full gap-3 md:gap-6 lg:gap-11"
+          className="grid grid-cols-2 lg:grid-cols-3 w-full gap-3 md:gap-6 p-2 lg:gap-11"
         >
           {searchedGrooms.map((item, index) => (
             <Card {...item} item={item} index={item.id} key={index} />
