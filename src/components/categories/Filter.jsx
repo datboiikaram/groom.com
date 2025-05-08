@@ -10,12 +10,12 @@ const Filter = ({ name }) => {
     <div className="overflow-hidden">
       <div
         dir="ltr"
-        className="flex gap-2 animate-slide-in  rounded-md bg-gray-100 px-2 py-1"
+        className="flex gap-2 animate-slide-in md:text-[15px] lg:text-base text-sm  rounded-md bg-gray-100 px-2 py-1"
       >
         <p className="text-gray-400">{name}</p>
         <svg
           onClick={deleteFilterHandler}
-          className="w-4 fill-[#b6b3b3] hover:fill-red-400 duration-200"
+          className="w-3 lg:w-4 fill-[#b6b3b3] hover:fill-red-400 duration-200"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 384 512"
         >

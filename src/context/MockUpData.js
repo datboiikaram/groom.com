@@ -1,7 +1,7 @@
-import zeyad1 from "../grooms-assets/zeyad/zeyadGroom1.jpg";
+import zeyad1 from "../grooms-assets/zeyad/zeyadGroom1.webp";
 import zeyad2 from "../grooms-assets/zeyad/zeyadGroom2.webp";
-import zeyad3 from "../grooms-assets/zeyad/zeyadGroom3.jpg";
-import zeyad4 from "../grooms-assets/zeyad/zeyadGroom4.jpg";
+import zeyad3 from "../grooms-assets/zeyad/zeyadGroom3.webp";
+import zeyad4 from "../grooms-assets/zeyad/zeyadGroom4.webp";
 
 export const MockUpData = [
   {

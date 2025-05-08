@@ -16,7 +16,7 @@ const PropertyButton = ({ name, section }) => {
   };
 
   return (
-    <li className="flex  items-center justify-end font-normal hover:bg-[#eee] duration-200 p-1 rounded-[7px] text-xl gap-2">
+    <li className="flex  items-center justify-end font-normal hover:bg-[#eee] duration-200 p-1 rounded-[7px] text-lg lg:text-xl gap-2">
       <label className="w-full text-end" htmlFor={name}>
         {name}
       </label>

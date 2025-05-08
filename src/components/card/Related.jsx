@@ -9,9 +9,12 @@ const Related = () => {
   const relatedGrooms = [groom1, groom2, groom3, groom4];
 
   return (
-    <div dir="rtl" className="flex flex-col gap-5 mb-10 font-Messiri">
-      <p className="text-3xl font-bold">خدلك بصة على باقي العرسان</p>
-      <div className="grid grid-cols-4 gap-8">
+    <div
+      dir="rtl"
+      className="flex flex-col items-center md:items-start gap-5 mb-10 font-Messiri w-full  "
+    >
+      <p className="text-lg md:text-3xl font-bold">خدلك بصة على باقي العرسان</p>
+      <div className="grid auto-cols-max grid-flow-col  w-full snap-x snap-mandatory overflow-x-auto  gap-5  md:gap-5 lg:gap-8">
         {relatedGrooms.map((item, index) => (
           <Card {...item} item={item} index={item.id} key={index} />
         ))}

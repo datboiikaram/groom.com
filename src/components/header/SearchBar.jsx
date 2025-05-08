@@ -12,13 +12,13 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="flex items-center h-fit justify-center gap-1 py-1 px-3 bg-gray-100 hover:bg-gray-200 duration-200 w-fit rounded-xl ">
+    <div className="flex items-center  h-fit justify-center gap-1 py-1 px-3 bg-gray-100 hover:bg-gray-200 duration-200 w-fit rounded-xl ">
       <input
         id="search"
         type="text"
         value={searchQuery}
         onChange={handleSearch}
-        className="font-Messiri p-2 rounded-xl outline-0 "
+        className="font-Messiri p-2 rounded-xl outline-0 md:text-sm "
         placeholder="البحث عن ابن الحلال"
         dir="rtl"
       />

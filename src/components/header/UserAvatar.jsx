@@ -342,7 +342,7 @@ const UserAvatar = ({ avatar, name }) => {
           {isOpen && (
             <div
               onClick={(e) => e.preventDefault()}
-              className="border cursor-auto flex flex-col items-center justify-center text-center gap-2 absolute min-w-30 bg-white border-[#eee] p-2 rounded-md left-[-100%] font-semibold font-sans "
+              className="border cursor-auto flex flex-col items-center justify-center text-center gap-2 absolute min-w-30 bg-white border-[#eee] p-2 rounded-md md:left-[-100%] left-[-200%] text-sm md:text-base font-semibold font-sans "
             >
               {name}
               <button

@@ -36,3 +36,7 @@ html {
     }
   }
 }
+/* .touch-manipulation {
+  --webkit-user-select: none;
+  user-select: none;
+} */

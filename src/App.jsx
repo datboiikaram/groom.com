@@ -7,7 +7,7 @@ import HeroAnimation from "./components/card/HeroAnimation";
 function App() {
   return (
     <div className="w-full  flex flex-col items-center justify-center m-0 p-0">
-      <div className="w-fit flex flex-col  items-center justify-center gap-10">
+      <div className="w-full flex flex-col  items-center justify-center gap-10 mb-10 overflow-hidden ">
         <DataContextProvider>
           <HeroAnimation />
           <Header />

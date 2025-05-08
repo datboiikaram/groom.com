@@ -404,7 +404,7 @@ export const starIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 576 512"
-    className="fill-amber-400 w-5"
+    className="fill-amber-400 w-4 md:w-5"
   >
     <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
   </svg>
@@ -424,13 +424,11 @@ export const NoGroomImage = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
-    width="500"
     zoomAndPan="magnify"
     viewBox="0 0 375 374.999991"
-    height="500"
     preserveAspectRatio="xMidYMid meet"
     version="1.0"
-    className="fill-[#c7c7c7]"
+    className="fill-[#c7c7c7] w-80 md:w-100 lg:w-125"
   >
     <defs>
       <clipPath id="02ca791ac0">
@@ -512,9 +510,7 @@ export const NoGroomImage = (
 export const NoFavoritesImage = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="fill-[#c7c7c7]"
-    width="500"
-    height="500"
+    className="fill-[#c7c7c7] w-80 md:w-100 lg:w-125"
     viewBox="0 0 512 512"
   >
     <path d="M119.4 44.1c23.3-3.9 46.8-1.9 68.6 5.3l49.8 77.5-75.4 75.4c-1.5 1.5-2.4 3.6-2.3 5.8s1 4.2 2.6 5.7l112 104c2.9 2.7 7.4 2.9 10.5 .3s3.8-7 1.7-10.4l-60.4-98.1 90.7-75.6c2.6-2.1 3.5-5.7 2.4-8.8L296.8 61.8c28.5-16.7 62.4-23.2 95.7-17.6C461.5 55.6 512 115.2 512 185.1l0 5.8c0 41.5-17.2 81.2-47.6 109.5L283.7 469.1c-7.5 7-17.4 10.9-27.7 10.9s-20.2-3.9-27.7-10.9L47.6 300.4C17.2 272.1 0 232.4 0 190.9l0-5.8c0-69.9 50.5-129.5 119.4-141z" />

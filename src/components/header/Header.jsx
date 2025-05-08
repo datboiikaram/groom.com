@@ -30,17 +30,26 @@ const Header = () => {
   const userInfo = getFromDB("user");
 
   return (
-    <div className="flex items-center justify-center gap-40  p-2">
+    <div className="flex flex-col md:flex-row items-center   gap-5 justify-center lg:gap-30  p-2">
       <SearchBar />
-      <Logo />
-      <div className="flex items-center gap-5">
-        <HeaderButton
-          path="/favorites"
-          text="فرسان الأحلام"
-          icon={favoritesIcon}
-        />
-        <HeaderButton path="/cart" text="سلة العرسان" icon={groomIcon} />
-        <UserAvatar avatar={userInfo.picture} name={userInfo.name} />
+
+      <div className="flex gap-5  lg:gap-30 order-first items-center justify-between md:justify-center w-full md:order-last ">
+        <Logo />
+        <div className="flex items-center gap-2 md:gap-5 ">
+          <HeaderButton
+            path="/favorites"
+            text="فرسان الأحلام"
+            icon={favoritesIcon}
+          />
+
+          <HeaderButton
+            cart={true}
+            path="/cart"
+            text="سلة العرسان"
+            icon={groomIcon}
+          />
+          <UserAvatar avatar={userInfo.picture} name={userInfo.name} />
+        </div>
       </div>
     </div>
   );

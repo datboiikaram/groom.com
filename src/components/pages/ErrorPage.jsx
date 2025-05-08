@@ -4,11 +4,11 @@ import { errorImage } from "../card/icons";
 const ErrorPage = () => {
   return (
     <div dir="rtl" className="flex items-center justify-center h-[100vh]">
-      <div className="flex items-center justify-center font-Messiri gap-5">
+      <div className="flex flex-col lg:flex-row items-center justify-center font-Messiri gap-5">
         {errorImage}
         <div className="flex flex-col gap-3">
-          <p className="font-bold text-4xl">أووبس !</p>
-          <p className="text-2xl font-bold text-[#c5c5c5]">
+          <p className="font-bold text-3xl md:text-4xl">أووبس !</p>
+          <p className="text-xl md:text-2xl font-bold text-[#c5c5c5]">
             العريس اللي بتدور عليه مش هنا
           </p>
           <Link

@@ -13,7 +13,7 @@ const Logo = () => {
       viewBox="0 0 420 119.999999"
       preserveAspectRatio="xMidYMid meet"
       version="1.0"
-      className="w-60"
+      className="w-38 md:w-50 lg:w-60"
       onClick={navigateToHome}
     >
       <defs>

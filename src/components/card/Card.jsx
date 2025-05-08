@@ -56,17 +56,19 @@ const Card = ({ name, tags, discount, price, images, index, item }) => {
       onClick={ResetStates}
       to={`/:${index}`}
       dir="ltr"
-      className="flex flex-col relative font-Messiri shadow-sm w-fit rounded-2xl overflow-hidden  duration-200 "
+      className="flex flex-col  relative md:snap-start font-Messiri shadow-sm w-43  md:w-fit rounded-2xl overflow-hidden  duration-200 "
     >
       <div>
-        <img
-          src={images.length ? images[0] : `https://placehold.co/260x260`}
-          className="h-[260px] w-[260px]"
-          alt=""
-        />
+        <div className="w-full h-45 md:h-60 lg:h-65">
+          <img
+            src={images.length ? images[0] : `https://placehold.co/260x260`}
+            className="w-full h-full object-cover  md:w-60 lg:w-65"
+            alt=""
+          />
+        </div>
 
         {tags && (
-          <span className="bg-amber-200 p-2  text-amber-800 rounded-xl font-bold absolute top-[5%] left-[5%]">
+          <span className="bg-amber-200 p-2 text-xs md:text-base text-amber-800 rounded-xl font-bold absolute top-[5%] left-[5%]">
             {tags}
           </span>
         )}
@@ -77,7 +79,7 @@ const Card = ({ name, tags, discount, price, images, index, item }) => {
         >
           {isFavorite ? (
             <svg
-              className="fill-red-500  w-6  hover:scale-[1.05]   duration-200 active:scale-[0.5]
+              className="fill-red-500 w-5 md:w-6  hover:scale-[1.05]   duration-200 active:scale-[0.5]
  "
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
@@ -87,7 +89,7 @@ const Card = ({ name, tags, discount, price, images, index, item }) => {
             </svg>
           ) : (
             <svg
-              className="fill-red-500  w-6  hover:scale-[1.05]  duration-200 active:scale-[0.5]"
+              className="fill-red-500  w-5 md:w-6  hover:scale-[1.05]  duration-200 active:scale-[0.5]"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
               onClick={addToFavoritesHandler}
@@ -97,39 +99,44 @@ const Card = ({ name, tags, discount, price, images, index, item }) => {
           )}
         </button>
       </div>
-      <div className="flex flex-col gap-3 p-3 items-end">
-        <p className="text-2xl font-bold">{name}</p>
-        <div className="flex items-center justify-between w-full">
+      <div className="flex flex-col  lg:gap-3 p-3 items-end">
+        <p className="text-sm md:text-xl lg:text-2xl font-bold">{name}</p>
+        <div className="flex items-end  md:items-center justify-between w-full gap-2 md:gap-0">
           <button
             onClick={addToCartHandler}
             title="إضافة إلى سلة العرسان"
-            className="p-2 bg-violet-200 w-fit h-fit rounded-xl hover:bg-violet-300 duration-200 "
+            className="p-2 bg-violet-200 w-fit h-fit rounded-lg md:rounded-xl hover:bg-violet-300 duration-200 "
           >
             <svg
-              className="fill-violet-800 w-8"
+              className="fill-violet-800 w-5 md:w-7 lg:w-8"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 576 512"
             >
               <path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20l44 0 0 44c0 11 9 20 20 20s20-9 20-20l0-44 44 0c11 0 20-9 20-20s-9-20-20-20l-44 0 0-44c0-11-9-20-20-20s-20 9-20 20l0 44-44 0c-11 0-20 9-20 20z" />
             </svg>
           </button>
-          <div className="flex flex-col items-end">
-            <p className="text-[#777777]">: السعر </p>
-            <div className="flex items-center justify-center gap-2">
+          <div className="flex flex-col items-end  ">
+            <p className="text-[#777777] text-sm md:text-base ">: السعر </p>
+            <div className="flex items-center justify-center  gap-1 md:gap-2">
               {discount ? (
                 <>
-                  <p className="bg-red-200 text-red-600 py-0.5 px-1.5 rounded-xl">
+                  <p className="bg-red-200 text-red-600  md:py-0.5 px-1 md:px-1.5 rounded-xl text-xs md:text-sm ">
                     {`-${toArabicNumber(discount)}٪`}
                   </p>
-                  <p className="text-[#555] line-through">
-                    {toArabicNumber(price)} ج.م
-                  </p>
-                  <p className="font-bold text-xl">
-                    {toArabicNumber(newPrice)} ج.م
-                  </p>
+
+                  <div className="flex flex-col md:flex-row md:gap-0.5 justify-center items-center">
+                    <p className="text-[#555] line-through text-xs md:text-lg ">
+                      {toArabicNumber(price)} ج.م
+                    </p>
+                    <p className="font-bold order-first md:order-last text-xs md:text-lg ">
+                      {toArabicNumber(newPrice)} ج.م
+                    </p>
+                  </div>
                 </>
               ) : (
-                <p className="font-bold text-xl">{toArabicNumber(price)} ج.م</p>
+                <p className="font-bold text-sm md:text-base  ">
+                  {toArabicNumber(price)} ج.م
+                </p>
               )}
             </div>
           </div>

@@ -6,7 +6,7 @@ const DataContextProvider = ({ children }) => {
   const [filterList, setFilterList] = useState([]);
 
   const [sortBy, setSortBy] = useState("age");
-
+  const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [imageIndex, setImageIndex] = useState(0);
   const [cartList, setCartList] = useState(() => {
@@ -37,6 +37,7 @@ const DataContextProvider = ({ children }) => {
   useEffect(() => {
     saveToDB("user", userInfo);
   }, [userInfo]);
+
   const sortedGrooms = () => {
     const groomsCopy = [...MockUpData];
     switch (sortBy) {
@@ -80,6 +81,8 @@ const DataContextProvider = ({ children }) => {
         setSearchQuery,
         setSortBy,
         searchedGrooms,
+        isFilterMenuOpen,
+        setIsFilterMenuOpen,
       }}
     >
       {children}

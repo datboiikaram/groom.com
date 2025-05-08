@@ -43,27 +43,30 @@ const Rating = ({ ratings, testimonials }) => {
   const rate = numberOfStars / numberOfReviews;
 
   return (
-    <div className=" w-full  font-Messiri flex flex-col gap-5 " dir="rtl">
-      <p className="text-3xl font-bold">التقييمات والآراء</p>
-      <div className="flex items-center  w-full gap-10 ">
-        <div className="flex   border border-[#eee] p-3 rounded-2xl gap-3">
-          <div className="flex flex-col justify-center items-center">
-            <p className="text-2xl text-[#c6c6c6]">
-              <span className="text-8xl text-black">
+    <div
+      className="   font-Messiri flex flex-col items-center md:items-start gap-5 "
+      dir="rtl"
+    >
+      <p className="text-lg md:text-3xl font-bold">التقييمات والآراء</p>
+      <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start  w-full gap-3 md:gap-10 ">
+        <div className="flex w-85 md:w-fit   border border-[#eee] p-3 rounded-2xl  gap-3">
+          <div className="flex flex-col w-full justify-center items-center">
+            <p className="text-lg md:text-2xl text-[#c6c6c6]">
+              <span className="text-5xl md:text-7xl lg:text-8xl text-black">
                 {toArabicNumber(rate.toFixed(1))}
               </span>
               \{toArabicNumber(5)}
             </p>
-            <p className="text-[#c6c6c6]">
+            <p className="text-[#c6c6c6] text-sm md:text-base">
               ( {toArabicNumber(numberOfReviews)} تقييم )
             </p>
           </div>
           <div className="w-full flex flex-col items-end ">
-            <div className="flex items-center justify-center gap-2 text-xl font-bold">
+            <div className="flex items-center justify-center gap-2 md:text-xl font-bold">
               {toArabicNumber(5)}
               {starIcon}{" "}
               <span
-                className={`w-[220px] h-2 bg-[#eee]  relative overflow-hidden  rounded-2xl `}
+                className={`w-40 md:w-50 lg:w-55 h-1 md:h-2 bg-[#eee]  relative overflow-hidden  rounded-2xl `}
               >
                 <span
                   className="h-full bg-black transition-all duration-300  absolute rounded-2xl "
@@ -71,11 +74,11 @@ const Rating = ({ ratings, testimonials }) => {
                 ></span>
               </span>
             </div>
-            <div className="flex items-center justify-center gap-2 text-xl font-bold">
+            <div className="flex items-center justify-center gap-2 md:text-xl font-bold">
               {toArabicNumber(4)}
               {starIcon}{" "}
               <span
-                className={`w-[220px] h-2 bg-[#eee]  relative overflow-hidden  rounded-2xl `}
+                className={`w-40 md:w-50 lg:w-55 h-1 md:h-2 bg-[#eee]  relative overflow-hidden  rounded-2xl `}
               >
                 <span
                   className="h-full bg-black transition-all duration-300  absolute rounded-2xl "
@@ -83,11 +86,11 @@ const Rating = ({ ratings, testimonials }) => {
                 ></span>
               </span>
             </div>
-            <div className="flex items-center justify-center gap-2 text-xl font-bold">
+            <div className="flex items-center justify-center gap-2 md:text-xl font-bold">
               {toArabicNumber(3)}
               {starIcon}{" "}
               <span
-                className={`w-[220px] h-2 bg-[#eee]  relative overflow-hidden  rounded-2xl `}
+                className={`w-40 md:w-50 lg:w-55 h-1 md:h-2 bg-[#eee]  relative overflow-hidden  rounded-2xl `}
               >
                 <span
                   className="h-full bg-black transition-all duration-300  absolute rounded-2xl "
@@ -95,11 +98,11 @@ const Rating = ({ ratings, testimonials }) => {
                 ></span>
               </span>
             </div>
-            <div className="flex items-center justify-center gap-2 text-xl font-bold">
+            <div className="flex items-center justify-center gap-2 md:text-xl font-bold">
               {toArabicNumber(2)}
               {starIcon}{" "}
               <span
-                className={`w-[220px] h-2 bg-[#eee]  relative overflow-hidden  rounded-2xl `}
+                className={`w-40 md:w-50 lg:w-55 h-1 md:h-2 bg-[#eee]  relative overflow-hidden  rounded-2xl `}
               >
                 <span
                   className="h-full bg-black transition-all duration-300  absolute rounded-2xl "
@@ -107,11 +110,11 @@ const Rating = ({ ratings, testimonials }) => {
                 ></span>
               </span>
             </div>
-            <div className="flex items-center justify-center gap-2 text-xl font-bold">
+            <div className="flex items-center justify-center gap-2 md:text-xl font-bold">
               {toArabicNumber(1)}
               {starIcon}{" "}
               <span
-                className={`w-[220px] h-2 bg-[#eee]  relative overflow-hidden  rounded-2xl `}
+                className={`w-40 md:w-50 lg:w-55 h-1 md:h-2 bg-[#eee]  relative overflow-hidden  rounded-2xl `}
               >
                 <span
                   className="h-full bg-black  transition-all duration-300 absolute rounded-2xl "
@@ -121,7 +124,7 @@ const Rating = ({ ratings, testimonials }) => {
             </div>
           </div>
         </div>
-        <div className="w-90 p-3 h-[166px]  border border-[#eee] rounded-2xl">
+        <div className="w-85 p-3 h-[166px]  border border-[#eee] rounded-2xl">
           <Swiper
             modules={[Pagination, Autoplay]}
             spaceBetween={20}

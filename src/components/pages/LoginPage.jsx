@@ -16,6 +16,10 @@ const LoginPage = () => {
   const handleSignUp = () => {
     setSignOption("signUp");
   };
+  const navigateToHome = (e) => {
+    e.preventDefault();
+    navigate("/");
+  };
   const login = useGoogleLogin({
     onSuccess: async (tokenResponse) => {
       try {
@@ -48,7 +52,7 @@ const LoginPage = () => {
   };
   const signOptions = {
     signIn: (
-      <form className="flex flex-col gap-2">
+      <form onSubmit={navigateToHome} className="flex flex-col gap-3 ">
         <p>أو اكمل باستخدام البريد الإلكتروني</p>
         <div
           dir="ltr"
@@ -82,22 +86,22 @@ const LoginPage = () => {
             required
           />
         </div>
-        <button
-          type="submit"
-          className="bg-sky-500 text-white font-bold hover:bg-sky-600 duration-200 py-1.5 rounded-full"
-        >
+        <button className="bg-sky-500 text-white font-bold hover:bg-sky-600 duration-200 py-1.5 rounded-full">
           الدخول للقاعة
         </button>
         <p className="flex items-center justify-center text-sm font-bold gap-1 text-[#949494]">
           لا تمتلك حساب؟{" "}
-          <span className="text-black cursor-pointer " onClick={handleSignUp}>
+          <span className="text-black cursor-pointer  " onClick={handleSignUp}>
             إنشاء حساب
           </span>
         </p>
       </form>
     ),
     signUp: (
-      <form className="flex flex-col gap-2">
+      <form
+        onSubmit={navigateToHome}
+        className="flex flex-col gap-3 text-center md:text-start"
+      >
         <p>قم بإنشاء حساب</p>
         <div
           dir="ltr"
@@ -131,10 +135,7 @@ const LoginPage = () => {
             required
           />
         </div>
-        <button
-          type="submit"
-          className="bg-sky-500 text-white font-bold hover:bg-sky-600 duration-200 py-1.5 rounded-full"
-        >
+        <button className="bg-sky-500 text-white font-bold hover:bg-sky-600 duration-200 py-1.5 rounded-full">
           بدأ البحث عن العريس
         </button>
         <p className="flex items-center justify-center text-sm font-bold gap-1 text-[#949494]">
@@ -151,8 +152,8 @@ const LoginPage = () => {
       dir="rtl"
       className="flex items-center justify-center font-Messiri h-[100vh] border border-[#eee]"
     >
-      <div className="flex items-center justify-center gap-5 rounded-2xl  border border-[#eee] p-2">
-        <div className="flex items-center justify-center bg-[#eee] rounded-2xl h-90">
+      <div className="flex  md:flex-row flex-col items-center justify-center gap-5 rounded-2xl  border border-[#eee] p-2">
+        <div className="flex items-center justify-center bg-[#eee] rounded-2xl md:h-90 h-50">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -160,7 +161,7 @@ const LoginPage = () => {
             viewBox="0 0 420 119.999999"
             preserveAspectRatio="xMidYMid meet"
             version="1.0"
-            className="w-100"
+            className="md:w-100 w-80"
           >
             <defs>
               <g />
@@ -223,7 +224,7 @@ const LoginPage = () => {
             </g>
           </svg>
         </div>
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-5 items-center md:items-start">
           <h3 className="font-bold text-3xl">تسجيل الدخول</h3>
           <div className="flex flex-col gap-2 border-b border-[#eee] pb-3">
             <p>تسجيل الدخول باستخدام حسابك</p>

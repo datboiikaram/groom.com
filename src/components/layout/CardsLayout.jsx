@@ -9,9 +9,12 @@ const CardsLayout = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-end">
+      <div className="flex flex-col justify-center items-end ">
         <SortSection />
-        <div dir="rtl" className="grid grid-cols-3 w-fit gap-11">
+        <div
+          dir="rtl"
+          className="grid grid-cols-2 lg:grid-cols-3 w-full gap-3 md:gap-6 lg:gap-11"
+        >
           {searchedGrooms.map((item, index) => (
             <Card {...item} item={item} index={item.id} key={index} />
           ))}
