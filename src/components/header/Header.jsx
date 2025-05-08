@@ -30,7 +30,7 @@ const Header = () => {
   const userInfo = getFromDB("user");
 
   return (
-    <div className="flex flex-col md:flex-row items-center   gap-5 justify-center lg:gap-30  p-2">
+    <div className="flex flex-col md:flex-row items-center   gap-5 justify-between w-full lg:max-w-274 lg:gap-30  p-2">
       <SearchBar />
 
       <div className="flex gap-5  lg:gap-30 order-first items-center justify-between md:justify-center w-full md:order-last ">
