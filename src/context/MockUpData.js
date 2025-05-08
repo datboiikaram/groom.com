@@ -198,7 +198,7 @@ export const MockUpData = [
       "https://placehold.co/260x260",
     ],
     id: 2,
-    features: ["مبرمج", "ملتزم", "مستقر ماديًا"],
+    features: ["مبرمج", "ملتزم", "مستقر ماديًا", "بيقبض بالدولار"],
     tags: "عرض خااص",
     place: "القاهرة",
     content:
@@ -244,7 +244,7 @@ export const MockUpData = [
     price: 520,
     discount: 0,
     height: 187,
-    age: 27,
+    age: 26,
     hasHouse: true,
     hasHouseNote: "عنده شقة",
     readyToMarryNote: "جاهز ",

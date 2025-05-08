@@ -13,7 +13,7 @@ const FavoritesPage = () => {
           <p className="text-2xl mr-2 md:mr-0 md:text-3xl lg:text-4xl font-bold ">
             فرسان الأحلام
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5  gap-2 md:gap-5">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 p-2 gap-2 md:gap-5">
             {favoritesList?.map((item, index) => (
               <FavoriteComponent
                 item={item}
