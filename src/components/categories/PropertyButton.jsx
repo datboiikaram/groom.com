@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { DataContext } from "../../context/DataContext";
 
-const PropertyButton = ({ name, section }) => {
+const PropertyButton = ({ name, section, radio }) => {
   const { filterList, setFilterList } = useContext(DataContext);
   const handleChecked = (e) => {
     const value = e.target.value;

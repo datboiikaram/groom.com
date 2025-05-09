@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { DataContext } from "./DataContext";
 import { MockUpData } from "./MockUpData";
-
 const DataContextProvider = ({ children }) => {
   const [filterList, setFilterList] = useState([]);
 
@@ -51,17 +50,17 @@ const DataContextProvider = ({ children }) => {
   };
 
   const filteredGrooms = sortedGrooms().filter((groom) => {
-    return groom.filters.some((item) => filterList.includes(item));
+    if (filterList.length === 0) {
+      return true;
+    }
+
+    return filterList.every((filter) => groom.filters.includes(filter));
   });
 
-  const searchedGrooms =
-    filteredGrooms.length === 0
-      ? sortedGrooms().filter((groom) => {
-          return groom.name.includes(searchQuery);
-        })
-      : filteredGrooms.filter((groom) => {
-          return groom.name.includes(searchQuery);
-        });
+  const searchedGrooms = filteredGrooms.filter((groom) => {
+    return groom.name.includes(searchQuery);
+  });
+
   return (
     <DataContext.Provider
       value={{
