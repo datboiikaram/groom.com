@@ -22,10 +22,10 @@ const CardsLayout = () => {
             ))}
           </div>
         ) : (
-          <div className="flex flex-col font-Messiri items-center justify-center gap-5  lg:w-221">
+          <div className="flex flex-col font-Messiri items-center justify-center gap-5 max-w-93 md:max-w-128  lg:max-w-221 lg:w-221">
             <img
               src={`${NoFilterResult}`}
-              className="max-w-full  md:max-w-lg lg:max-w-xl p-2"
+              className="max-w-full  md:max-w-lg lg:max-w-xl p-4"
               alt=""
             />
             <p className=" text-2xl md:text-4xl font-bold text-[#c7c7c7]">
