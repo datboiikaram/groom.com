@@ -18,9 +18,9 @@ const FilterSection = () => {
           <p className="text-2xl  md:text-3xl font-bold">: فلاتر التصفية</p>
           <div className="w-fit ">
             <FilterButton name={"السن"}>
-              <PropertyButton section={"age"} name={"تحت ٢٥"} />
-              <PropertyButton section={"age"} name={"٢٥ - ٣٠"} />
-              <PropertyButton section={"age"} name={"فوق ٣٠"} />
+              <PropertyButton radio={true} section={"age"} name={"تحت ٢٥"} />
+              <PropertyButton radio={true} section={"age"} name={"٢٥ - ٣٠"} />
+              <PropertyButton radio={true} section={"age"} name={"فوق ٣٠"} />
             </FilterButton>
             <FilterButton name={"الصفات الشخصية"}>
               <PropertyButton section={"personal"} name={"عنده شغل"} />
@@ -37,9 +37,21 @@ const FilterSection = () => {
               <PropertyButton section={"hobbies"} name={"مبرمج"} />
             </FilterButton>
             <FilterButton name={"الاستعداد للجواز"}>
-              <PropertyButton section={"ready"} name={"جاهز من بكرة"} />
-              <PropertyButton section={"ready"} name={"ظروفو علي قدو"} />
-              <PropertyButton section={"ready"} name={"متجوز اصلا"} />
+              <PropertyButton
+                radio={true}
+                section={"ready"}
+                name={"جاهز من بكرة"}
+              />
+              <PropertyButton
+                radio={true}
+                section={"ready"}
+                name={"ظروفو علي قدو"}
+              />
+              <PropertyButton
+                radio={true}
+                section={"ready"}
+                name={"متجوز اصلا"}
+              />
             </FilterButton>
           </div>
         </div>
@@ -82,9 +94,21 @@ const FilterSection = () => {
                 <PropertyButton section={"hobbies"} name={"مبرمج"} />
               </FilterButton>
               <FilterButton name={"الاستعداد للجواز"}>
-                <PropertyButton section={"ready"} name={"جاهز من بكرة"} />
-                <PropertyButton section={"ready"} name={"ظروفو علي قدو"} />
-                <PropertyButton section={"ready"} name={"متجوز اصلا"} />
+                <PropertyButton
+                  radio={true}
+                  section={"ready"}
+                  name={"جاهز من بكرة"}
+                />
+                <PropertyButton
+                  radio={true}
+                  section={"ready"}
+                  name={"ظروفو علي قدو"}
+                />
+                <PropertyButton
+                  radio={true}
+                  section={"ready"}
+                  name={"متجوز اصلا"}
+                />
               </FilterButton>
             </div>
           </div>

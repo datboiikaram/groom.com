@@ -3,15 +3,47 @@ import { DataContext } from "../../context/DataContext";
 
 const PropertyButton = ({ name, section, radio }) => {
   const { filterList, setFilterList } = useContext(DataContext);
+  // const handleChecked = (e) => {
+  //   const value = e.target.value;
+  //   if (radio) {
+  //     setFilterList((prev) => {
+  //       const filtered = prev.filter((item) => {
+  //         return item.section === section;
+  //       });
+  //     });
+  //   }
+  //   if (e.target.checked) {
+  //     setFilterList((prev) =>
+  //       prev?.includes(value) ? prev : [...prev, value]
+  //     );
+  //   } else {
+  //     setFilterList((prev) => prev.filter((item) => item !== value));
+  //   }
+  // };
+
   const handleChecked = (e) => {
     const value = e.target.value;
 
-    if (e.target.checked) {
-      setFilterList((prev) =>
-        prev?.includes(value) ? prev : [...prev, value]
-      );
+    if (radio) {
+      setFilterList((prev) => {
+        const filtered = prev.filter((item) => {
+          const itemSection = document.querySelector(
+            `input[value="${item}"]`
+          )?.name;
+
+          return itemSection !== section;
+        });
+
+        return e.target.checked ? [...filtered, value] : filtered;
+      });
     } else {
-      setFilterList((prev) => prev.filter((item) => item !== value));
+      if (e.target.checked) {
+        setFilterList((prev) =>
+          prev?.includes(value) ? prev : [...prev, value]
+        );
+      } else {
+        setFilterList((prev) => prev.filter((item) => item !== value));
+      }
     }
   };
 
@@ -26,8 +58,8 @@ const PropertyButton = ({ name, section, radio }) => {
         onChange={handleChecked}
         name={section}
         id={name}
-        type="checkbox"
-        className=" accent-violet-700  "
+        type={radio ? "radio" : "checkbox"}
+        className=" accent-violet-700 cursor-pointer "
       />
     </li>
   );
